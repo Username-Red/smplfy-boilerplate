@@ -24,6 +24,7 @@ class ExampleUsecase {
 
 		SMPLFY_Log::info( "ENTRY: ", $entry );//Log to Datadog
 
+
 		//Move to different workflow step
 		WorkflowStep::send( '10', $exampleEntry->formEntry );
 
