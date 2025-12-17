@@ -16,6 +16,7 @@ use WP_Error;
  * @method static ExampleEntity|null get_one( $fieldId, $value )
  * @method static ExampleEntity|null get_one_for_current_user()
  * @method static ExampleEntity|null get_one_for_user( $userId )
+ * @method static ExampleEntity|null update(ExampleEntity $exampleEntity)
  * @method static ExampleEntity[] get_all( $fieldId = null, $value = null, string $direction = 'ASC' )
  * @method static int|WP_Error add( ExampleEntity $entity )
  */

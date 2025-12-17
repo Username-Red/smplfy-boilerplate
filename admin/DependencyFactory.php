@@ -19,6 +19,7 @@ class DependencyFactory {
 
 		// Repositories
 		$exampleRepository = new ExampleRepository( $gravityFormsWrapper );
+        $ContactUsRepository = new ContactUsRepository( $gravityFormsWrapper);
 		//Usecases
 		$exampleUsecase     = new ExampleUsecase( $exampleRepository );
 		$wpHeartbeatExample = new WPHeartbeatExample( $exampleRepository );
