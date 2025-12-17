@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: SMPLFY Boiler Plate
- * Version: 1.0.1
+ * Version: 1.0.2
  * Description: Starter plugin with custom plugin framework to get started
  * Author: Thomas Picolo-Donnelly
  * Author URI: https://simplifybiz.com/
