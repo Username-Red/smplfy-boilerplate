@@ -27,5 +27,13 @@ function require_boilerplate_dependencies() {
 	require_directory( 'public/php/usecases' );
 	require_directory( 'public/php/adapters' );
 
+    // 1. Include the new files (assuming they aren't auto-loaded)
+    require_once plugin_dir_path(__FILE__) . '../public/php/usecases/SyncPdfTemplateUsecase.php';
+    require_once plugin_dir_path(__FILE__) . '../public/php/adapters/GithubWebhookAdapter.php';
+
+    // 2. Initialize them
+    $sync_pdf_worker = new SyncPdfTemplateUsecase();
+    new GithubWebhookAdapter($sync_pdf_worker);
+
 }
 

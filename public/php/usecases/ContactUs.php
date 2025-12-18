@@ -9,7 +9,7 @@ class ContactUs
 
     public function __construct( ExampleRepository $exampleRepository, ContactUsRepository $contactUsRepository ) {
         $this->exampleRepository = $exampleRepository;
-        $this->ContactUsRepository = $contactUsRepository;
+        $this->C8ontactUsRepository = $contactUsRepository;
     }
 
     public function handle_contact_us_submission($form, $entry) {
