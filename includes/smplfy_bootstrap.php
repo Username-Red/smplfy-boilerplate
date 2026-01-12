@@ -39,7 +39,7 @@ function smplfy_register_custom_roles() {
         'gravityforms_view_entries'      => true,
         'gravityforms_edit_entries'      => true,
         'gravityflow_view_entries'       => true,
-        'gravityflow_submit_entry_detail' => true,
+        'gravityflow_submit_entry_detail' => true, // this is so that they can submit entries
     ];
 
     foreach ( $roles as $slug => $name ) {
