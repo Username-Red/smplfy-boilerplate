@@ -6,9 +6,41 @@
 namespace SMPLFY\boilerplate;
 
 function bootstrap_boilerplate_plugin() {
-	require_boilerplate_dependencies();
+    require_boilerplate_dependencies();
 
-	DependencyFactory::create_plugin_dependencies();
+    DependencyFactory::create_plugin_dependencies();
+
+    add_action( 'init', __NAMESPACE__ . '\\smplfy_register_custom_roles' );
+}
+
+function smplfy_register_custom_roles() {
+    $roles = [
+        'tech'    => 'Tech',
+        'manager' => 'Manager',
+        'support' => 'Support'
+    ];
+
+    // These are the specific keys needed to unlock the Gravity Forms/Flow API
+    $api_caps = [
+        'read'                           => true,
+        'gravityforms_view_entries'      => true,
+        'gravityforms_edit_entries'      => true,
+        'gravityflow_view_entries'       => true,
+        'gravityflow_submit_entry_detail' => true, // Allows them to process steps
+    ];
+
+    foreach ( $roles as $slug => $name ) {
+        if ( ! get_role( $slug ) ) {
+            // If role doesn't exist, create it with the API caps
+            add_role( $slug, $name, $api_caps );
+        } else {
+            // If role ALREADY exists, make sure it HAS the API caps
+            $role_object = get_role( $slug );
+            foreach ( $api_caps as $cap => $grant ) {
+                $role_object->add_cap( $cap );
+            }
+        }
+    }
 }
 
 /**
