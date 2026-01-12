@@ -39,7 +39,7 @@ jobs:
           server: ftp.sblik.com
           username: ${{ secrets.FTP_LIVE_USERNAME }}
           password: ${{ secrets.FTP_LIVE_PASSWORD }}
-          server-dir: /public_html/wp-content/plugins/wp-sandbox-toolkit/
+          server-dir: /public_html/wp-content/plugins/smplfy-boilerplate/
 
           exclude: |
             **/exclude/**
