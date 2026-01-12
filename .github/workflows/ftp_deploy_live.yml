@@ -27,7 +27,7 @@ jobs:
           username: ${{ secrets.FTP_LIVE_USERNAME }}
           password: ${{ secrets.FTP_LIVE_PASSWORD }}
           # Path relative to the FTP login root
-          server-dir: public_html/wp-content/plugins/smplfy-boilerplate/
+          server-dir: public_html/wp-content/plugins/smplfy_boilerplate/
           # Ensure we are uploading everything from the root of the repo
           local-dir: ./
           # Use 'ftp' for standard or 'ftps' if your host requires security
