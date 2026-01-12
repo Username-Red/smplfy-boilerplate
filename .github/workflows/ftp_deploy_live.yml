@@ -31,7 +31,7 @@ jobs:
           # Ensure we are uploading everything from the root of the repo
           local-dir: ./
           # Use 'ftp' for standard or 'ftps' if your host requires security
-          protocol: ftp
+          protocol: ftps
           # Exclude files you don't want on the live server
           exclude: |
             **/exclude/**
