@@ -1,25 +1,17 @@
-# This is a basic workflow to help you get started with Actions
 name: Deploy to live
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push to the main "main" branch
   push:
     branches: [ "main" ]
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs
 jobs:
   ftp-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      # 1. Checks-out your repository
       - name: Checkout latest changes
         uses: actions/checkout@v3
 
-      # 2. Deploy files to server via FTP
       - name: Deploy changes via ftp
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -28,11 +20,8 @@ jobs:
           password: ${{ secrets.FTP_LIVE_PASSWORD }}
           # Path relative to the FTP login root
           server-dir: public_html/wp-content/plugins/smplfy_boilerplate/
-          # Ensure we are uploading everything from the root of the repo
           local-dir: ./
-          # Use 'ftp' for standard or 'ftps' if your host requires security
-          protocol: ftps
-          # Exclude files you don't want on the live server
+          protocol: ftp
           exclude: |
             **/exclude/**
             **/.github/**
