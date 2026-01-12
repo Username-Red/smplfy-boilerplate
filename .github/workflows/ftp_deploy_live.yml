@@ -23,7 +23,9 @@ jobs:
           local-dir: ./
           protocol: ftp
           exclude: |
-            **/exclude/**
-            **/.github/**
+            **/.git/**
+            **/node_modules/**
             .gitignore
             README.md
+            package.json
+            package-lock.json
